@@ -47,7 +47,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar p-0 bg-base-100 shadow-sm mx-auto px-8 md:px-12 lg:px-16 xl:px-24">
+    <div className="navbar fixed p-0 bg-base-100 z-50 shadow-sm mx-auto px-8 md:px-12 lg:px-16 xl:px-24">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -75,11 +75,11 @@ const Navbar = () => {
         </div>
         <NavLink to="/" className="btn btn-ghost text-xl">
           <img
-            className="h-8 w-8  rounded-full"
+            className="md:h-8 md:w-8 h-7 w-7  rounded-full"
             src="https://i.ibb.co/PvDd35h1/icon-1.png"
             alt="logo"
           />
-          <h1 className=" text-3xl font-bold">
+          <h1 className=" md:text-3xl text-xl font-bold">
             <strong>
               <span className="text-[#0EA5E9]">M</span>
               <span className="text-[#0EA106]">NI</span>
@@ -93,7 +93,7 @@ const Navbar = () => {
       <div className="navbar-end">
         <Link
           to="/"
-          className="btn  btn-active bg-[#0EA106] border-none rounded-xl text-white text-xl font-semibold"
+          className="btn  btn-active bg-[#0EA106] border-none rounded-xl text-white md:text-xl  font-semibold"
         >
           Resume
           <span>
