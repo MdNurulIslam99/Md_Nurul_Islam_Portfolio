@@ -3,7 +3,7 @@ import React from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { Outlet } from "react-router";
-import { ThemeProvider } from "../context/ThemeContext";
+import { ThemeProvider } from "../../contexts/ThemeContext";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 
 const MainLayouts = () => {
@@ -12,7 +12,7 @@ const MainLayouts = () => {
       <div>
         <ThemeSwitch></ThemeSwitch>
       </div>
-      <div className="font-poppins dark:bg-gray-900 dark:text-blue-600">
+      <div className="font-poppins dark:bg-gray-900 dark:text-blue-500">
         <div>
           <Navbar></Navbar>
         </div>

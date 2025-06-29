@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router";
-import MainLayouts from "../MainLayouts/MainLayouts";
-import Home from "../Home/Home";
-import Projects from "../Projects/Projects";
-import About from "../About/About";
-import Contact from "../Contact/Contact";
+import MainLayouts from "../components/MainLayouts/MainLayouts";
+import Home from "../components/Home/Home";
+import Projects from "../components/Projects/Projects";
+import About from "../components/About/About";
+import Contact from "../components/Contact/Contact";
 
 export const router = createBrowserRouter([
   {

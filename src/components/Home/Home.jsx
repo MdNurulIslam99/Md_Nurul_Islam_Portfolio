@@ -5,34 +5,37 @@ import Contact from "../Contact/Contact";
 import HeroSection from "../HeroSection/HeroSection";
 import MySkills from "../MySkills/MySkills";
 import MyServices from "../MyServices/MyServices";
+import { ThemeProvider } from "../../contexts/ThemeContext";
 
 const Home = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto md:px-7 lg:px-16 px-2 md:py-1">
-      <div className="mt-5 mb-10">
-        <HeroSection></HeroSection>
-      </div>
+    <ThemeProvider>
+      <div className="max-w-screen-2xl mx-auto md:px-7 lg:px-16 px-2 md:py-1">
+        <div className="mt-5 mb-10">
+          <HeroSection></HeroSection>
+        </div>
 
-      <div className="mt-10 mb-10">
-        <About></About>
-      </div>
+        <div className="mt-10 mb-10">
+          <About></About>
+        </div>
 
-      <div className="mt-10 mb-10">
-        <MySkills></MySkills>
-      </div>
+        <div className="mt-10 mb-10">
+          <MySkills></MySkills>
+        </div>
 
-      <div className="mt-10 mb-10">
-        <MyServices></MyServices>
-      </div>
+        <div className="mt-10 mb-10">
+          <MyServices></MyServices>
+        </div>
 
-      <div className="mt-10 mb-10">
-        <Projects></Projects>
-      </div>
+        <div className="mt-10 mb-10">
+          <Projects></Projects>
+        </div>
 
-      <div className="mt-10 mb-10">
-        <Contact></Contact>
+        <div className="mt-10 mb-10">
+          <Contact></Contact>
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
