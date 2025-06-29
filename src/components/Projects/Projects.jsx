@@ -27,11 +27,11 @@ const Projects = () => {
 
   return (
     <div
-      className="bg-base-100 mt-5 mb-10 max-w-screen-2xl mx-auto md:px-7 lg:px-16 px-2 md:py-1"
+      className=" mt-5 mb-10 max-w-screen-2xl mx-auto md:px-7 lg:px-16 px-2 md:py-1"
       id="projects"
     >
       <div className="max-w-8xl mx-auto space-y-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-cyan-500 mb-8">
+        <h2 className="text-3xl mt-10 md:text-4xl font-bold text-center text-cyan-500 mb-8">
           My Projects
         </h2>
 
