@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { motion } from "framer-motion"; //  Added framer-motion import
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // technologies: FETCH PROJECTS FROM JSON FILE
   useEffect(() => {
     fetch("/projectData.json")
       .then((res) => res.json())
@@ -14,31 +14,64 @@ const Projects = () => {
       .catch((err) => console.error("Error loading projects:", err));
   }, []);
 
-  // technologies: DETAILS MODAL HANDLER
   const handleDetailsClick = (project) => {
     setSelectedProject(project);
     document.getElementById("details_modal").showModal();
   };
 
-  // technologies: GITHUB MODAL HANDLER
   const handleGithubClick = () => {
     document.getElementById("github_modal").showModal();
   };
 
+  // Animation variants for cards (alternate left/right)
+  const cardVariantsLeft = {
+    hidden: { x: -200, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const cardVariantsRight = {
+    hidden: { x: 200, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  // Animation variants for title
+  const titleVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
   return (
     <div
-      className=" mt-5 mb-10 max-w-screen-2xl mx-auto md:px-7 lg:px-16 px-2 md:py-1"
+      className="mt-5 mb-10 max-w-screen-2xl mx-auto md:px-7 lg:px-16 px-2 md:py-1 "
       id="projects"
     >
-      <div className="max-w-8xl mx-auto space-y-12">
-        <h2 className="text-3xl mt-10 md:text-4xl font-bold text-center text-cyan-500 mb-8">
-          My Projects
-        </h2>
+      <motion.h2
+        className="text-3xl mt-10 md:text-4xl font-bold text-center mb-8 text-black dark:text-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }} //  changed once:false to animate on every scroll
+        variants={titleVariants}
+      >
+        My Projects
+      </motion.h2>
 
+      <div className="max-w-8xl mx-auto space-y-12">
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
             className="flex flex-col md:flex-row bg-gray-200 rounded-2xl shadow-2xl overflow-hidden border"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }} //  changed once:false here too
+            variants={index % 2 === 0 ? cardVariantsLeft : cardVariantsRight}
           >
             {/* Carousel */}
             <div className="md:w-1/2 w-full p-5">
@@ -112,10 +145,10 @@ const Projects = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
 
-        {/* technologies: Project Details Modal */}
+        {/* Project Details Modal */}
         <dialog id="details_modal" className="modal">
           <div className="modal-box bg-white text-black max-w-2xl">
             <h3 className="font-bold text-xl text-cyan-600 mb-3">
@@ -192,7 +225,7 @@ const Projects = () => {
           </div>
         </dialog>
 
-        {/* technologies: GitHub Modal */}
+        {/* GitHub Modal */}
         <dialog id="github_modal" className="modal">
           <div className="modal-box bg-white text-black max-w-md">
             <h3 className="font-bold text-xl text-cyan-600 mb-4">

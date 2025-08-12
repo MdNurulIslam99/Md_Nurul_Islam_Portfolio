@@ -106,7 +106,7 @@ const Contact = () => {
             viewport={{ once: false, amount: 0.3 }}
             variants={leftVariants}
           >
-            <h2 className="text-3xl font-bold text-cyan-400">Contact Form</h2>
+            {/* <h2 className="text-3xl font-bold text-cyan-400">Contact Form</h2> */}
             <div>
               <label className="text-sm">Your Name</label>
               <input

@@ -95,7 +95,7 @@ const MySkills = () => {
           className="text-3xl md:text-4xl text-black font-bold mb-6 inline-block text-center w-full"
           data-aos="fade-right"
         >
-          MY <span className="text-cyan-400">SKILLS</span>
+          MY <span className="">SKILLS</span>
         </h2>
 
         <div

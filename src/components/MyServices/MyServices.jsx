@@ -33,13 +33,25 @@ const cardVariants = {
   },
 };
 
+// Added title animation variants
+const titleVariants = {
+  hidden: { opacity: 0, y: -40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
 const MyServices = () => {
   return (
     <div className="bg-gray-200 rounded-2xl shadow-lg py-16 px-4" id="services">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-10">
-          My <span>Service's</span>
-        </h2>
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center text-black mb-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.5 }}
+          variants={titleVariants}
+        >
+          My <span className="">Service's</span>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => (
@@ -48,7 +60,7 @@ const MyServices = () => {
               className="bg-[#1E293B] border border-cyan-500 rounded-xl p-8 shadow-md hover:shadow-cyan-500/50 transition duration-300 text-white text-center hover:scale-[1.03]"
               initial={index % 2 === 0 ? "hiddenLeft" : "hiddenRight"}
               whileInView="visible"
-              viewport={{ once: false, amount: 0.3 }} // <-- changed here
+              viewport={{ once: false, amount: 0.3 }}
               variants={cardVariants}
               transition={{ delay: index * 0.3 }}
             >

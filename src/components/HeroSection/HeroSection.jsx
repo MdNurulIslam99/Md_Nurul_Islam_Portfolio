@@ -10,7 +10,7 @@ const HeroSection = () => {
   return (
     <div className="hero bg-gray-200 rounded-2xl mt-5 mb-10 max-w-screen-2xl mx-auto md:px-7 lg:px-16 px-2 md:py-1">
       <div className="hero-content flex-col lg:flex-row-reverse gap-16">
-        {/* ✅ Animate profile image from RIGHT */}
+        {/*  Animate profile image from RIGHT */}
         <div>
           <motion.img
             src={nurul}
@@ -21,7 +21,7 @@ const HeroSection = () => {
           />
         </div>
 
-        {/* ✅ Animate text from LEFT */}
+        {/*  Animate text from LEFT */}
         <div>
           <motion.div
             initial={{ x: -200, opacity: 0 }} // start from left
