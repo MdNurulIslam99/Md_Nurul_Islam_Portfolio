@@ -1,6 +1,7 @@
 import React from "react";
 import { IoMdDownload } from "react-icons/io";
 import { Link, NavLink } from "react-router";
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 
 const Navbar = () => {
   const links = (
@@ -77,63 +78,83 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar fixed p-0 bg-[#0682a1] z-50 shadow-sm mx-auto px-8 md:px-12 lg:px-16 xl:px-24">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+    <div className="fixed top-0 left-0 w-full z-50 bg-[#0682a1] shadow-md">
+      <div className="max-w-screen-2xl mx-auto px-4 xl:px-8 flex items-center justify-between h-16">
+        {/*  CHANGED: Wrap the logo/menu group with reversed flex on mobile */}
+        <div className="flex  lg:flex-row items-center gap-4">
+          {/*  CHANGED: Mobile menu toggle comes first (left side on small screens) */}
+          <div className="dropdown lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="cursor-pointer text-white"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content mt-3 z-[1] p-2 shadow bg-[#0682a1] rounded-box w-52 text-white space-y-1"
+            >
+              {links}
+            </ul>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
+          {/*  CHANGED: Logo and project name come after menu icon on mobile */}
+          <NavLink className="flex items-center gap-2" to="/">
+            <img
+              className="md:h-10 h-6 md:w-10 w-6 rounded-full "
+              src="https://i.ibb.co/fzZSrP6Q/images.jpg"
+              alt="logo"
+            />
+            <h1 className=" md:text-3xl text-xl font-bold">
+              <strong>
+                <span className="text-[#0EA5E9]">M</span>
+                <span className="text-emerald-400">NI</span>
+              </strong>
+            </h1>
+          </NavLink>
+        </div>
+
+        {/* Nav links for desktop only */}
+        <div className="hidden lg:flex">
+          <ul className="menu menu-horizontal space-x-5 font-semibold text-white">
             {links}
           </ul>
         </div>
-        <NavLink to="/" className="btn btn-ghost text-xl">
-          <img
-            className="md:h-8 md:w-8 h-7 w-7  rounded-full"
-            src="https://i.ibb.co/PvDd35h1/icon-1.png"
-            alt="logo"
-          />
-          <h1 className=" md:text-3xl text-xl font-bold">
-            <strong>
-              <span className="text-[#0EA5E9]">M</span>
-              <span className="text-emerald-400">NI</span>
-            </strong>
-          </h1>
-        </NavLink>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
-      </div>
-      <div className="navbar-end">
-        {/* Resume Button - Downloads & Opens */}
-        <a
-          href="/ResumeOfMdNurulIslam.pdf"
-          download="Resume-of-Md-Nurul-Islam.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn mt-5 mb-4 px-5 btn-active bg-emerald-600 border-none rounded-xl text-white text-xl font-semibold"
-        >
-          Resume
-          <span>
-            <IoMdDownload size={20} />
-          </span>
-        </a>
+
+        {/* Right side - theme + user or auth buttons */}
+        <div className="flex items-center gap-8">
+          {/* Resume Button - Downloads & Opens */}
+          <div>
+            <ThemeSwitch />
+          </div>
+          <div>
+            <a
+              href="/ResumeOfMdNurulIslam.pdf"
+              download="Resume-of-Md-Nurul-Islam.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn mt-5 mb-4 px-5 btn-active bg-emerald-600 border-none rounded-xl text-white text-xl font-semibold"
+            >
+              Resume
+              <span>
+                <IoMdDownload size={20} />
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
