@@ -14,7 +14,10 @@ import {
   SiJavascript,
   SiMongodb,
   SiExpress,
+  SiFirebase,
+  SiMui,
 } from "react-icons/si";
+import { MdOutlineDesignServices } from "react-icons/md";
 
 const skills = [
   {
@@ -34,6 +37,15 @@ const skills = [
     icon: <SiTailwindcss size={52} className="text-sky-400" />,
   },
   {
+    name: "DaisyUI",
+    icon: <MdOutlineDesignServices size={52} className="text-purple-600" />,
+  },
+
+  {
+    name: "Mamba UI",
+    icon: <SiMui size={52} className="text-pink-500" />, // Change icon if needed
+  },
+  {
     name: "Javascript",
     icon: <SiJavascript size={52} className="text-yellow-500" />,
   },
@@ -42,13 +54,18 @@ const skills = [
     icon: <FaReact size={52} className="text-cyan-400" />,
   },
   {
-    name: "Express.js",
-    icon: <SiExpress size={52} className="text-yellow-700" />,
+    name: "Firebase Auth",
+    icon: <SiFirebase size={52} className="text-yellow-400" />,
   },
   {
     name: "Node.js",
     icon: <FaNodeJs size={52} className="text-green-500" />,
   },
+  {
+    name: "Express.js",
+    icon: <SiExpress size={52} className="text-yellow-700" />,
+  },
+
   {
     name: "MongoDB",
     icon: <SiMongodb size={52} className="text-green-400" />,
@@ -60,8 +77,8 @@ const MySkills = () => {
     AOS.init({
       duration: 1000,
       offset: 100,
-      once: false, // ❗ Allow animation to happen every time it scrolls into view
-      mirror: false, // ❗ Animation won't run when scrolling out of view
+      once: false,
+      mirror: false,
     });
 
     AOS.refresh();
@@ -75,7 +92,7 @@ const MySkills = () => {
     >
       <div className="max-w-7xl mx-auto">
         <h2
-          className="text-3xl md:text-4xl text-black font-bold mb-6  inline-block text-center w-full"
+          className="text-3xl md:text-4xl text-black font-bold mb-6 inline-block text-center w-full"
           data-aos="fade-right"
         >
           MY <span className="text-cyan-400">SKILLS</span>
