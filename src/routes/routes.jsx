@@ -5,6 +5,8 @@ import Projects from "../components/Projects/Projects";
 import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import ProjectDetails from "../components/ProjectDetails/ProjectDetails";
+import MySkills from "../components/MySkills/MySkills";
+import MyServices from "../components/MyServices/MyServices";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +24,14 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         Component: About,
+      },
+      {
+        path: "/mySkills",
+        Component: MySkills,
+      },
+      {
+        path: "/service",
+        Component: MyServices,
       },
       {
         path: "/contact",

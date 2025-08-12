@@ -22,7 +22,7 @@ const About = () => {
   return (
     <div className="mt-5 mb-10  max-w-screen-2xl mx-auto md:px-7 lg:px-16 px-2 md:py-1 ">
       <div className="bg-gray-200 rounded-2xl shadow-lg py-12 px-4 md:px-8 lg:px-20 ">
-        <div className="max-w-6xl mx-auto" data-aos="fade-up">
+        <div className="max-w-7xl mx-auto" data-aos="fade-up">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
               Personal Details

@@ -9,12 +9,12 @@ const Contact = () => {
         className=" flex items-center justify-center md:px-4 md:py-10 bg-gray-200 rounded-2xl"
         id="contact"
       >
-        <div className="max-w-6xl w-full bg-[#1E293B] rounded-2xl shadow-xl border border-cyan-500 p-8 md:p-16 grid md:grid-cols-2 gap-10 text-white">
+        <div className="max-w-7xl w-full bg-[#1E293B] rounded-2xl shadow-xl border border-cyan-500 p-8 md:p-16 grid md:grid-cols-2 gap-10 text-white">
           {/* className="max-w-6xl w-full bg-white/5 backdrop-blur-sm rounded-2xl shadow-xl border border-cyan-500 p-8 md:p-16 grid md:grid-cols-2 gap-10 text-white" */}
           {/* Left - Info */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-cyan-400">Contact Me</h2>
-            <p className="text-gray-300">
+            <p className="text-gray-300 text-justify">
               Feel free to get in touch with me.I'm always open to new projects,
               new ideas, and new opportunities. Have something in mind or just
               want to say hello? Feel free to reach out using the form or the

@@ -7,7 +7,9 @@ const Navbar = () => {
     <>
       <li>
         <NavLink
-          className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
+          className={({ isActive }) =>
+            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
+          }
           to="/"
         >
           <span className="text-xl font-bold">Home</span>
@@ -16,7 +18,20 @@ const Navbar = () => {
 
       <li>
         <NavLink
-          className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
+          className={({ isActive }) =>
+            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
+          }
+          to="/mySkills"
+        >
+          <span className="text-xl font-bold">My Skills</span>
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
+          }
           to="/projects"
         >
           <span className="text-xl font-bold">
@@ -27,7 +42,20 @@ const Navbar = () => {
 
       <li>
         <NavLink
-          className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
+          className={({ isActive }) =>
+            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
+          }
+          to="/service"
+        >
+          <span className="text-xl font-bold">Services</span>
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
+          }
           to="/about"
         >
           <span className="text-xl font-bold">About</span>
@@ -36,7 +64,9 @@ const Navbar = () => {
 
       <li>
         <NavLink
-          className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
+          className={({ isActive }) =>
+            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
+          }
           to="/contact"
         >
           <span className="text-xl font-bold">
@@ -47,7 +77,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar fixed p-0 bg-base-100 z-50 shadow-sm mx-auto px-8 md:px-12 lg:px-16 xl:px-24">
+    <div className="navbar fixed p-0 bg-[#0682a1] z-50 shadow-sm mx-auto px-8 md:px-12 lg:px-16 xl:px-24">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -82,7 +112,7 @@ const Navbar = () => {
           <h1 className=" md:text-3xl text-xl font-bold">
             <strong>
               <span className="text-[#0EA5E9]">M</span>
-              <span className="text-[#0EA106]">NI</span>
+              <span className="text-emerald-400">NI</span>
             </strong>
           </h1>
         </NavLink>
@@ -91,15 +121,19 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <Link
-          to="/"
-          className="btn  btn-active bg-[#0EA106] border-none rounded-xl text-white md:text-xl  font-semibold"
+        {/* Resume Button - Downloads & Opens */}
+        <a
+          href="/ResumeOfMdNurulIslam.pdf"
+          download="Resume-of-Md-Nurul-Islam.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn mt-5 mb-4 px-5 btn-active bg-emerald-600 border-none rounded-xl text-white text-xl font-semibold"
         >
           Resume
           <span>
             <IoMdDownload size={20} />
           </span>
-        </Link>
+        </a>
       </div>
     </div>
   );

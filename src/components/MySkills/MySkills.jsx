@@ -73,7 +73,7 @@ const MySkills = () => {
       id="skills"
       data-aos="fade-up"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <h2
           className="text-3xl md:text-4xl text-black font-bold mb-6  inline-block text-center w-full"
           data-aos="fade-right"
