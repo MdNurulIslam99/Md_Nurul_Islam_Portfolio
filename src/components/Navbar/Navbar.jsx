@@ -32,6 +32,17 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive ? "text-black text-lg font-bold" : "text-white text-lg"
           }
+          to="/service"
+        >
+          <span className="text-xl font-bold">Services</span>
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
+          }
           to="/projects"
         >
           <span className="text-xl font-bold">
@@ -45,18 +56,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive ? "text-black text-lg font-bold" : "text-white text-lg"
           }
-          to="/service"
-        >
-          <span className="text-xl font-bold">Services</span>
-        </NavLink>
-      </li>
-
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
-          }
-          to="/about"
+          to="/aboutMe"
         >
           <span className="text-xl font-bold">About</span>
         </NavLink>

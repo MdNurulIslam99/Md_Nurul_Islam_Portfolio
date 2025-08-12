@@ -12,9 +12,9 @@ const Footer = () => {
           </p>
         </aside>
       </footer> */}
-      <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+      <footer className="footer sm:footer-horizontal footer-center bg-gray-300 text-base-content p-4">
         <aside>
-          <p>
+          <p className="text-base">
             Copyright © {new Date().getFullYear()} - All right reserved by{" "}
             <strong>MNI_DEVZONE</strong>
           </p>

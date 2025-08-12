@@ -86,7 +86,7 @@ const MySkills = () => {
 
   return (
     <div
-      className="bg-gray-200 text-white rounded-2xl shadow-lg py-14 px-6 md:px-16"
+      className="bg-gray-200 text-white rounded-2xl shadow-lg py-14 px-6 md:px-16 mb-10"
       id="skills"
       data-aos="fade-up"
     >
